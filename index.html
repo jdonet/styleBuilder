@@ -21,7 +21,7 @@
         </select>
         <br>
         <caption>Mise en forme du fond</caption>
-        <selec id="fondStyle">
+        <select id="fondStyle">
             <option value="fondClair">Clair</option>
             <option value="fondFonce">Foncé</option>
             <option value="fondRouge">Rouge</option>
@@ -38,11 +38,8 @@
     </div>
     <div>
         <h3>Zone de test du style</h3>
-        <select id="choixStyle">
-            <option value="defaut" onchange="majStyle('defaut')">Par défaut</option>
-            <script>
-                afficherStylesOptions();
-            </script>
+        <select id="choixStyle" onchange="majStyle()">
+            <option value="defaut">Par défaut</option>
         </select>
         
 <div id="txt">
@@ -63,6 +60,6 @@ Integer vitae magna dignissim, sagittis ante ac, semper est. Fusce consequat leo
 </body>
 <script>
 init();
-majStyle("defaut")
+majStyle();
 </script>
 </html>

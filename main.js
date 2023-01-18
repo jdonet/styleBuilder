@@ -9,18 +9,17 @@ function afficherStylesOptions(){
 
 /**
  * Fonction chargée de mettre à jour suivant le style sélectionné
- * @param {*} style : le style sélectionné
  */
-function majStyle(style){
+function majStyle(){
+    //récup style sélectionné
+    let style = document.getElementById("choixStyle").value
     var elementTxt = document.getElementById("txt");
     elementTxt.removeAttribute("class")
     var elementsImg = document.getElementsByTagName("img");
     for(let elementImg of elementsImg) {
         elementImg.removeAttribute("class") 
     }
-    
     elementTxt.setAttribute("class",styles.get(style).fond +" "+ styles.get(style).txt)
-    
     for(let elementImg of elementsImg) {
         elementImg.setAttribute("class",styles.get(style).img )
     }
@@ -36,4 +35,5 @@ function ajouterStyle(){
 
 function init(){
     styles.set("defaut",{txt:"txtBlue",fond:"fondRouge",img:"imgNB"})
+    afficherStylesOptions();
 }
